@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Function to display menu
+display_menu() {
+    echo "W = Shutdown"
+    echo "X = Reboot"
+    echo "C = Sleep"
+    echo "V = Nevermind"
+}
+
+# Main function
+main() {
+    while true; do
+        display_menu
+        read -n1 choice
+        echo ""
+        case $choice in
+            w)  systemctl poweroff
+                ;;
+            x)  systemctl reboot
+                ;;
+            c)  systemctl suspend
+                ;;
+            v)
+                break
+                exit 0
+                ;;
+            *)  break
+                exit 0
+                ;;
+        esac
+    done
+}
+
+main
+

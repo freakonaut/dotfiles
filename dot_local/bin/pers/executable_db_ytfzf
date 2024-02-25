@@ -1,0 +1,5 @@
+#!/bin/zsh
+if ps aux | grep -q -e '[/]usr/bin/ytfzf'; then
+echo "$(jq -r '.[0].title' ~/.cache/ytfzf/watch_hist | tail -n 1)"
+else; echo "󰦎"; fi
+

@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Icons: ttf-nerd-fonts-symbols
+# Show wifi signal strength OR ethernet OR no connection
+if [ "$(cat /sys/class/net/w*/operstate 2>/dev/null)" = 'up' ]; then
+    signal_strength="$(awk '/^\s*w/ { print int($3) }' /proc/net/wireless)"
+    case $signal_strength in
+        [0-9]|1[0-9])      wifiicon="󰤯" ;;
+        2[0-9]|3[0-9])     wifiicon="󰤟" ;;
+        4[0-9]|5[0-9])     wifiicon="󰤢" ;;
+        6[0-9]|7[0-9])     wifiicon="󰤥" ;;
+        8[0-9]|9[0-9]|100) wifiicon="󰤨";;
+    esac
+
+elif [ "$(cat /sys/class/net/e*/operstate 2>/dev/null)" = 'up' ]; then
+    		           ethericon="󰈁"
+else
+        		   no_connection=""
+fi
+
+
+#Wifi name aquisition
+
+wifi_name="$(nmcli device show wlan0 | sed -n 's/^GENERAL.CONNECTION: *//p')"
+
+ 
+
+
+printf "%s%s%s%s\n" "$wifiicon" "$wifi_name" "$ethericon" "$no_connection" 
+

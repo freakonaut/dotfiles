@@ -1,0 +1,12 @@
+#!/bin/sh
+
+wall=$(find ~/pix/aerial/* | shuf -n 1)
+xwallpaper --zoom $wall
+wal  -n -i $wall --saturate 0.5
+pywalfox update
+xdotool key super+F2
+
+cp $wall /home/rem/.mozilla/firefox/klrj049i.default-release/storage/default/moz-extension+++559697f5-a47b-46b8-8776-b0912f527156^userContextId=4294967295/idb/3647222921wleabcEoxlt-eengsairo.files/1
+
+
+xdotool search --onlyvisible --class Firefox key F5

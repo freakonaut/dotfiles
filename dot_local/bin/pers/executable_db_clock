@@ -1,0 +1,7 @@
+#!/bin/sh
+
+hour=$(date '+%H:%M')
+
+
+echo "󰜴 $hour 󰜱"
+

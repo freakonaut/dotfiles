@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cpu=$(mpstat | awk 'NR==4 {print $3"%"}')
+echo "󰗶 $cpu"
+

@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Icons: ttf-nerd-fonts-symbols
+# Prints battery current capacity and if it is charging
+
+current_capacity="$(cat /sys/class/power_supply/BAT?*/capacity)"
+battery_status="$(cat /sys/class/power_supply/BAT?*/status)"
+
+if [[ $battery_status = "Charging" ]]; then
+	status="󱐋"
+fi
+
+case $current_capacity in
+    [0-4])             battery="󰀦󰀦󰀦" ;;
+    [5-9])             battery="󰀦" ;;
+    1[0-9])            battery="" ;;
+    2[0-9]|3[0-9])     battery="" ;;
+    4[0-9]|5[0-9])     battery="" ;;
+    6[0-9]|7[0-9])     battery="" ;;
+    8[0-9]|9[0-9])     battery="";;
+	100)               battery="󰔓"
+esac
+
+printf "%s%s%s" "$status" "$battery"
+

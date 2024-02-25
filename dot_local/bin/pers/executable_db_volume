@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Prints the current volume or 🔇 if muted.
+
+vol="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | sed 's/[^0-9]//g; s/0*//')"
+
+echo " $vol%"
