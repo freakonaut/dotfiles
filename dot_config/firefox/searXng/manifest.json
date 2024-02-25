@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "SearXNG",
-  "version": "1.5",
+  "name": "SearXng-Garuda",
+  "version": "1.0",
   "author": "freakonaut",
   "default_locale": "en",
   "description": "__MSG_extensionDescription__",
@@ -9,10 +9,11 @@
     "48": "searxng48.webp"
   },
   "browser_action": {
-    "default_title": "searXng"
+    "default_title": "SearXng-Garuda"
   },
   "browser_specific_settings": {
     "gecko": {
+      "id": "{eb9f2f2e-ce95-48f7-a74c-574bc75c4820}",
       "strict_min_version": "64.0"
     }
   },

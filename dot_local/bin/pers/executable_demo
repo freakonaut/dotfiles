@@ -1,25 +1,25 @@
 #!/bin/sh
 
 ###########################################################################
-#									  #
+#									                                                        #
 #                    PYWAL STUFF, ITS PRETTY COOL!                        #
-#									  #
+#									                                                        #
 ###########################################################################
 
 while true; do
-sleep 2;
-echo "demo!";
+echo "demo!"
+sleep 1
 st -e bash -c "bash -c '
 
 ####### Here begins the script to pywal stuff #############################
 
-wall=$(find ~/pix/aerial/ | shuf -n 1) ;
-wal -c ;                           
-xwallpaper --zoom "$wall" ;       # Change your wallpaper displaying options
-wal -n --saturate 0.3 -i "$wall" ; # Choose your wal (pywal) options
-pywalfox update ;                 # if you use pywalfox
-xdotool key super+F2 ;            # This update xrdb, in my dwm config.h its:
-#{ MODKEY,                       XK_F2,     xrdb,           {.v = NULL } },
+wall=$(find ~/pix/aerial/ | shuf -n 1) 
+wal -c                            
+xwallpaper --zoom $wall         # Change your wallpaper displaying options
+wal -n --saturate 0.3 -i $wall  # Choose your wal (pywal) options
+pywalfox update                 # if you use pywalfox
+xdotool key super+F2            # This update xrdb, in my dwm config.h its:
+# { MODKEY,                       XK_F2,     xrdb,           {.v = NULL } },
 
 #To find your tabliss image folder you need to "upload" an image to tabliss, 
 #then copy the link 
@@ -28,12 +28,11 @@ xdotool key super+F2 ;            # This update xrdb, in my dwm config.h its:
 #so we can replace that image with $wall, 
 #remember to open that file to confirm its the one that is currently in tabliss
 
-cp $wall ~/.mozilla/firefox/custom/storage/default/moz-extension+++2f584602-2d29-432e-a5f7-2742e12f8cce^userContextId=4294967295/idb/3647222921wleabcEoxlt-eengsairo.files/4 ;
-sleep 0.5 ;  							 #optional
-xdotool search --onlyvisible --class Firefox key F5 ;             #optional  
+cp $wall ~/.mozilla/firefox/klrj049i.default-release/storage/default/moz-extension+++559697f5-a47b-46b8-8776-b0912f527156^userContextId=4294967295/idb/3647222921wleabcEoxlt-eengsairo.files/1 
+xdotool search --onlyvisible --class Firefox key F5                 #optional  
 
 ####### Here ends the script that pywal stuff ###############################
-
-neofetch ;
-sleep 2 ;
+sleep 1
+neofetch 
+sleep 1
 exit'" 2>/dev/null; done

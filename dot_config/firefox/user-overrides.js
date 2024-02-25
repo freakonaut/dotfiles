@@ -18,4 +18,5 @@ user_pref("privacy.clearOnShutdown.cookies", false);
 user_pref("privacy.clearOnShutdown.offlineApps", false); 
 
 user_pref("browser.startup.page", 1);
+user_pref("browser.startup.homepage",	moz-extension://559697f5-a47b-46b8-8776-b0912f527156/index.html);
 
