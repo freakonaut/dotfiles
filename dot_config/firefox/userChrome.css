@@ -40,8 +40,8 @@
 #identity-icon-box,
 #picture-in-picture-button,
 #tracking-protection-icon-container,
-#reader-mode-button,
-#translations-button {
+#reader-mode-button
+/*#translations-button */ {
   display: none !important
 }
 

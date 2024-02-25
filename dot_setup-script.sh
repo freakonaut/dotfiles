@@ -17,7 +17,7 @@ paru -S aria2 imagemagick feh firefox fzf gimp gimp-plugin-bimp htop \
 man-db mpv pamixer mlocate python-pywal python-pywalfox rsync thunar \
 tldr xdotool xwallpaper yt-dlp ytfzf sysstat zsh                     \
 zsh-syntax-highlighting ripgrep ttf-jetbrains-mono-nerd github-cli   \
-bob neofetch  
+bob neofetch keepassxc 
 
 #Ohmyzsh install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
