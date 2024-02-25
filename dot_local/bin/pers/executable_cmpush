@@ -1,0 +1,14 @@
+#!/bin/sh
+
+cd ~/.local/share/chezmoi/  
+chezmoi diff 
+read -p "Are the changes okay? (y/n): " diff_confirm
+if [ "$diff_confirm" != "y" ]; then
+    echo "Aborting. Please review changes and try again."
+    exit 1
+fi
+chezmoi apply 
+git add .
+read -p "Enter commit :" commit_message
+git commit -m "$commit_message" 
+git push -u origin main 

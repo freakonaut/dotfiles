@@ -25,7 +25,7 @@ static char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = { "󰞷", "", "", "" };
+static const char *tags[] = { "󰞷", "", "", "󰈸" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -106,13 +106,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
-	{ MODKEY,			XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,			                  XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_F5,     spawn,          {.v = backlight_minus } },
   { MODKEY,                       XK_F6,     spawn,          {.v = backlight_plus } },
   { MODKEY,                       XK_F3,     spawn,          {.v = volume_minus } },
   { MODKEY,                       XK_F4,     spawn,          {.v = volume_plus } },
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("firefox") },
   { MODKEY,                       XK_x,      spawn,          SHCMD("st -e power") },
+  { MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("st -e cmpush") },
 
 	{ MODKEY,                       XK_F2,     xrdb,           {.v = NULL } },
 
