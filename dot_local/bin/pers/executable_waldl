@@ -20,12 +20,13 @@ echo "(type % instead of spaces)"
 read -p "Search:" query
 
 #Api call 
-for i in {1..2}; do
-    curl -s "https://wallhaven.cc/api/v1/search?q=$query&categories=$category&purity=$purity&atleast=$resolution&ratios=landscape&sorting=favorites&page=$i"| jq -r '.data[].path' >> "$tmp"
-done
+for i in {1..5}; do
+    curl -s "https://wallhaven.cc/api/v1/search?q=$query&categories=$category&purity=$purity&atleast=$resolution&ratios=landscape&sorting=favorites&colors=000000&page=$i"| jq -r '.data[].path' >> "$tmp"
+done  
 
 #Aria2 download
-aria2c --conditional-get=true -j 100 --optimize-concurrent-downloads true --download-result=full -i "$tmp" -d ~/pix/wallhaven/$query  
+aria2c --conditional-get=true -j 10 --optimize-concurrent-downloads=true --download-result=hide -i "$tmp" -d ~/pix/wallhaven/$query
+ 
 rm "$tmp" 
 
 #Changing the wallpaper folder in the pywal script
@@ -33,10 +34,11 @@ path="path=~/pix/wallhaven/$query"
 sed -i "2s#.*#$path#" ~/.local/bin/pers/newlook
     
 
-while true; do  
+while true; do
 (~/.local/bin/pers/./newlook) >/dev/null
-(st -e bash -c "neofetch; read -n1 -p 'Press any key to close neofetch..'") >/dev/null & 
-read -n1 -p "Press any key for newlook.. ctrl+c to exit" foo 
+(st -e bash -c "neofetch; sleep 3") >/dev/null  
+echo "Press Ctrl+c to stop changing theme.." 
+sleep 3
 done
 
 
