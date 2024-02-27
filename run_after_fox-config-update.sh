@@ -9,7 +9,8 @@ mkdir -p "${path}/chrome"
 fi
 
 cp ~/.config/firefox/userChrome.css "${path}/chrome/"
-cp ~/.config/firefox/user.js  "${path}/"
+
+curl https://raw.githubusercontent.com/arkenfox/user.js/master/user.js > "${path}/user.js" 
 cp ~/.config/firefox/user-overrides.js "${path}/"
 
 cat "${path}/user-overrides.js" >> "${path}/user.js"
