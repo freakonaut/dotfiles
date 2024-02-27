@@ -12,5 +12,5 @@ cp ~/.config/firefox/userChrome.css "${path}/chrome/"
 
 curl https://raw.githubusercontent.com/arkenfox/user.js/master/user.js > "${path}/user.js" 
 
-cat "~/.config/firefox/user-overrides.js" >> "${path}/user.js"
+cat ~/.config/firefox/user-overrides.js >> "${path}/user.js"
 
