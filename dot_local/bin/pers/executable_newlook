@@ -1,6 +1,6 @@
 #!/bin/sh
-
-wall=$(find ~/pix/aerial/* | shuf -n 1)
+path=
+wall=$(find $path/* | shuf -n 1)
 xwallpaper --zoom $wall
 wal  -n -i $wall --saturate 0.5
 pywalfox update

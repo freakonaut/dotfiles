@@ -38,6 +38,6 @@ fi
 
 setxkbmap -option caps:escape &
 dwmblocks &
-new &
+newlook  &
 
 exec dwm

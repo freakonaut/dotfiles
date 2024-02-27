@@ -1,0 +1,42 @@
+#!/bin/sh
+
+tmp=$(mktemp)
+resolution=$(xrandr | awk '/\*/ {print $1}')
+
+#Queries
+echo "Choose category"
+echo "100 = general"
+echo "010 = anime"
+echo "001 = people"
+echo "multiple categories (110, 011, 101, 111) "
+read -n3 category
+echo ""
+echo "Choose lewdiness"
+echo "100 = 'SFW'" 
+echo "110 = Lewd"
+read -n3 purity 
+echo "" 
+echo "(type % instead of spaces)"
+read -p "Search:" query
+
+#Api call 
+for i in {1..2}; do
+    curl -s "https://wallhaven.cc/api/v1/search?q=$query&categories=$category&purity=$purity&atleast=$resolution&ratios=landscape&sorting=favorites&page=$i"| jq -r '.data[].path' >> "$tmp"
+done
+
+#Aria2 download
+aria2c --conditional-get=true -j 100 --optimize-concurrent-downloads true --download-result=full -i "$tmp" -d ~/pix/wallhaven/$query  
+rm "$tmp" 
+
+#Changing the wallpaper folder in the pywal script
+path="path=~/pix/wallhaven/$query"
+sed -i "2s#.*#$path#" ~/.local/bin/pers/newlook
+    
+
+while true; do  
+(~/.local/bin/pers/./newlook) >/dev/null
+(st -e bash -c "neofetch; read -n1 -p 'Press any key to close neofetch..'") >/dev/null & 
+read -n1 -p "Press any key for newlook.. ctrl+c to exit" foo 
+done
+
+
