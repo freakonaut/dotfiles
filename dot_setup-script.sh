@@ -1,7 +1,7 @@
 #!/bin/sh
 sudo pacman -S git base-devel 
 
-mkdir ~/pix ~/vid ~/doc ~/mus ~/dl ~/.local/src
+mkdir ~/pix ~/vid ~/mus ~/dl ~/.local/src
 
 #Git clone : Dmenu Dwm Dwmblocks St Paru
 git clone https://github.com/LukeSmithxyz/dmenu.git ~/.local/src
@@ -17,7 +17,7 @@ paru -S aria2 imagemagick feh firefox fzf gimp gimp-plugin-bimp htop \
 man-db mpv pamixer mlocate python-pywal python-pywalfox rsync thunar \
 tldr xdotool xwallpaper yt-dlp ytfzf sysstat zsh                     \
 zsh-syntax-highlighting ripgrep ttf-jetbrains-mono-nerd github-cli   \
-bob neofetch keepassxc 
+bob neofetch keepassxc ntfs-3g xorg-xev rage-encryption  
 
 #Ohmyzsh install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -26,8 +26,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 bob use 0.9.4 
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 
-
-
+#Ollama install
+curl -fsSL https://ollama.com/install.sh | sh
 
 
 
