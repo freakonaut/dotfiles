@@ -15,7 +15,7 @@ Yeah pretty much just basic dotfiles here, i guess.
 
 ```bash
   sudo pacman -S chezmoi
-  chezmoi init https://github.com/freakonaut/dotfiles.git
+  chezmoi init https://github.com/remi-maurice/dotfiles.git
   chezmoi cd
   ./dot_setup-script.sh
   chezmoi apply
