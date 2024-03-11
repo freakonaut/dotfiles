@@ -23,11 +23,12 @@ Yeah pretty much just basic dotfiles here, i guess.
 
 ## Buddies
 
+ - https://archlinux.org
  - https://www.chezmoi.io
  - https://github.com/Bugswriter
  - https://github.com/lukesmithxyz
  - https://suckless.org
- - https://firefoxcss-store.github.io/
+ - https://firefoxcss-store.github.io
  - https://github.com/arkenfox/user.js
  - https://github.com/Erghel/SearXNG-Web-Extension
  
