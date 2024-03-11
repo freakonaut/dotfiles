@@ -27,8 +27,4 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 bob use 0.9.4 
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 
-#Ollama install
-curl -fsSL https://ollama.com/install.sh | sh
-
-
 
