@@ -4,7 +4,12 @@
 This is the backup of my Archlinux config files and packages.
 Powered by https://www.chezmoi.io
 
+If someone read this i guess the cool things to check out
+are my little dwmbar scripts, maybe my firefox configs,
+but overall, i suggest you don't waste your time. 
 
+This repo has not really been made to be used by peoples other than me.
+Yeah pretty much just basic dotfiles here, i guess.
 
 ### Installation
 
@@ -15,10 +20,8 @@ Powered by https://www.chezmoi.io
   ./dot_setup-script.sh
   chezmoi apply
 ```
-      reboot 
 
-
-## Acknowledgements
+## Buddies
 
  - https://www.chezmoi.io
  - https://github.com/Bugswriter
